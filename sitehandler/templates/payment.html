@@ -1,0 +1,110 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment</title>
+</head>
+<body>
+    <h1>Complete Your Payment</h1>
+    <button id="checkout-button">Proceed to Payment</button>
+
+    <script src="https://js.stripe.com/v3/"></script>
+    <script>
+        const stripe = Stripe("{{ stripe_public_key }}");
+
+        document.getElementById('checkout-button').addEventListener('click', function () {
+            fetch('/create-checkout-session/', {
+                method: 'POST',
+                headers: {
+                    'X-CSRFToken': '{{ csrf_token }}',
+                }
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.id) {
+                    stripe.redirectToCheckout({ sessionId: data.id });
+                } else {
+                    alert("Error: " + data.error);
+                }
+            });
+        });
+    </script>
+</body>
+</html> -->
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complete Your Payment</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        .container {
+            margin-top: 100px;
+        }
+        .payment-card {
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            background-color: #fff;
+        }
+        h1 {
+            color: #343a40;
+        }
+        #checkout-button {
+            background-color: #007bff;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        #checkout-button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6 payment-card">
+                <h1 class="text-center">Complete Your Payment</h1>
+                <p class="text-center">Please click the button below to proceed with your payment.</p>
+                <div class="text-center">
+                    <button id="checkout-button">Proceed to Payment</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://js.stripe.com/v3/"></script>
+    <script>
+        const stripe = Stripe("{{ stripe_public_key }}");
+
+        document.getElementById('checkout-button').addEventListener('click', function () {
+            fetch('/create-checkout-session/', {
+                method: 'POST',
+                headers: {
+                    'X-CSRFToken': '{{ csrf_token }}',
+                }
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.id) {
+                    stripe.redirectToCheckout({ sessionId: data.id });
+                } else {
+                    alert("Error: " + data.error);
+                }
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,97 @@
+{% include 'include.html' %}
+{% include 'navbar.html' %}
+{% load static %}
+{% block body %}
+<!-- <h1 class="text-center">ABOUT</h1>
+<p class="text-justify" id="about-p">The main motive of this website is to provide a relaible service to our users with guranteed privacy. This website holds the detials of the patient to book their appointment with the doctors and can view their previous appointments, prescriptions,
+    reports etc.</p>
+<p class="text-justify" id="about-p1">The patient can view the doctors of their specialisation, so that they can book an appointment with the respective doctor of their intrest. The doctor can view all the details of the appointments so that he can gives the prescirption for the patients.
+    The prescription detials are also saved so that whenever the patient again visits to show the previous treatment taken.</p>
+<p class="text-justify" id="about-p-1">The Receptionist in the organisation will handle the outpatients comming to the hospital and maintaint the payments for the consultation through offline.The Admin can add new Doctors, Receptionists, view all the appointments, Delete Doctors account,
+    view the prescriptions given to the patients by doctors.&nbsp;</p>
+<div class="scroll-top-wrapper"><span class="scroll-top-inner"><i class="fa fa-arrow-circle-up"></i></span></div> -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css" integrity="sha256-2XFplPlrFClt0bIdPgpz8H7ojnk10H69xRqd9+uTShA=" crossorigin="anonymous" />
+<div class="container my-5">
+    <div class="row align-items-center">
+        <!-- Image Section -->
+        <div class="col-lg-6 col-md-12 order-2 order-md-1">
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-6 mb-4">
+                    <div class="card work-desk rounded border-0 shadow-sm overflow-hidden">
+                        <img src="{% static 'img/about2.jpg' %}" class="img-fluid" alt="Image" />
+                        <!-- <div class="img-overlay bg-dark"></div> -->
+                    </div>
+                    <div class="text-right mt-2">
+                        <a href="javascript:void(0)" class="btn btn-info">Contact Us <i class="fas fa-chevron-right"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-6 mb-4">
+                    <div class="card work-desk rounded border-0 shadow-sm overflow-hidden mb-3">
+                        <img src="{% static 'img/about3.jpg' %}" class="img-fluid" alt="Image" />
+                        <!-- <div class="img-overlay bg-dark"></div> -->
+                    </div>
+                    <div class="card work-desk rounded border-0 shadow-sm overflow-hidden">
+                        <img src="{% static 'img/about1.jpg' %}" class="img-fluid" alt="Image" />
+                        <!-- <div class="img-overlay bg-dark"></div> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Text Section -->
+        <div class="col-lg-6 col-md-12 order-1 order-md-2 mb-4">
+            <div class="section-title">
+                <h5 class="text-custom font-weight-normal mb-3">About Us</h5>
+                <h4 class="title mb-4">Our mission is to <br /> make your life easier.</h4>
+                <p class="text-muted mb-4">The main motive of this website is to provide reliable service to our users with guaranteed privacy. Users can manage appointments, view previous consultations, and more.</p>
+                
+                <div class="row">
+                    <div class="col-lg-6 mt-4">
+                        <div class="media align-items-center rounded shadow-sm p-3">
+                            <i class="fa fa-play h4 mb-0 text-custom"></i>
+                            <h6 class="ml-3 mb-0"><a href="{% url 'createaccountpage' %}" class="text-dark">Create Account</a></h6>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 mt-4">
+                        <div class="media align-items-center rounded shadow-sm p-3">
+                            <i class="fa fa-file-download h4 mb-0 text-custom"></i>
+                            <h6 class="ml-3 mb-0"><a href="{% url 'loginpage' %}" class="text-dark">Login</a></h6>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 mt-4">
+                        <div class="media align-items-center rounded shadow-sm p-3">
+                            <i class="fa fa-user h4 mb-0 text-custom"></i>
+                            <h6 class="ml-3 mb-0"><a href="#" class="text-dark">Support</a></h6>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 mt-4">
+                        <div class="media align-items-center rounded shadow-sm p-3">
+                            <i class="fa fa-image h4 mb-0 text-custom"></i>
+                            <h6 class="ml-3 mb-0"><a href="{% url 'login_admin' %}" class="text-dark">Admin Login</a></h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .text-custom {
+        color: #0062ff !important;
+    }
+    .img-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.3);
+        transition: 0.5s;
+    }
+    .card:hover .img-overlay {
+        background: rgba(0, 0, 0, 0.5);
+    }
+</style>
+
+{% endblock %}

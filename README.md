@@ -1,107 +1,130 @@
-E-Hospitality 🏥
+Django E-Hospital
+Django E-Hospital is a web-based hospital management system built with Python and the Django framework. It aims to streamline hospital operations by providing tools for patient management, appointment scheduling, and administrative tasks. The system is designed to be user-friendly for patients, doctors, and administrators, with a focus on accessibility and scalability.
+Features
 
-E-Hospitality is a Django-based Hospital Management System designed to streamline healthcare operations such as patient management, doctor appointments, and administrative tasks. This project focuses on delivering an easy-to-use, responsive, and secure solution for healthcare institutions.
+Patient Management: Register and manage patient profiles, including personal details and medical history.
+Appointment Scheduling: Book, reschedule, or cancel appointments with doctors based on availability.
+Doctor Profiles: View and manage doctor information and schedules.
+Admin Dashboard: Centralized interface for managing users, appointments, and hospital resources.
+Search Functionality: Search for doctors or patients with dynamic filtering.
+Secure Authentication: User registration and login for patients, doctors, and admins with Django's built-in security.
+Responsive Design: Mobile-friendly interface using Bootstrap.
 
-🚀 Features
+Note: Features may evolve as the project develops.
+Tech Stack
 
-User Authentication – Secure login and account creation for patients and staff.
+Backend: Python 3.8+, Django 5.0+
+Frontend: HTML, CSS, JavaScript, Bootstrap 5
+Database: SQLite (development), PostgreSQL (production recommended)
+Dependencies: Managed via requirements.txt (e.g., Django, psycopg2 for PostgreSQL)
+Tools: Git, Virtualenv
 
-Appointment Booking – Patients can schedule appointments online.
+Prerequisites
+Before setting up the project, ensure you have the following installed on your Windows machine:
 
-Patient Management – Doctors and admins can manage patient records.
+Python 3.8 or higher (Download)
+Git (Download)
+Pip (included with Python)
+Virtualenv (pip install virtualenv)
+Optional: PostgreSQL for production (Download)
 
-Admin Dashboard – Manage appointments, users, and system data.
+Verify installations:
+python --version
+git --version
+pip --version
 
-Responsive Design – Works seamlessly on desktop and mobile devices.
+Setup Instructions (Windows)
+Follow these steps to clone and run the project locally on a Windows machine:
 
-Database Integration – Uses MySQL for reliable data management.
-
-🛠️ Tech Stack
-
-Backend: Django (Python)
-
-Database: MySQL
-
-Frontend: HTML, CSS, JavaScript (Bootstrap/Tailwind for styling)
-
-Authentication: Django’s built-in auth system
-
-Deployment: PythonAnywhere / Localhost (XAMPP or MySQL server)
-
-📂 Project Structure
-E-Hospitality/
-│── hospital/          # Main Django app  
-│── templates/         # HTML templates  
-│── static/            # CSS, JS, Images  
-│── db.sqlite3         # Database (for testing, MySQL for production)  
-│── manage.py          # Django project manager  
-│── requirements.txt   # Dependencies  
-
-⚙️ Installation & Setup
-
-Clone the repository
-
+Clone the Repository:Open Command Prompt or Git Bash and run:
+cd C:\Path\To\Your\Projects
 git clone https://github.com/heymishab/E-Hospitality.git
 cd E-Hospitality
 
 
-Create a virtual environment & activate it
+Create and Activate a Virtual Environment:
+python -m venv env
+.\env\Scripts\activate
 
-python -m venv venv
-source venv/bin/activate   # On Mac/Linux  
-venv\Scripts\activate      # On Windows  
+You should see (env) in your terminal prompt.
 
-
-Install dependencies
-
+Install Dependencies:Install required Python packages:
 pip install -r requirements.txt
 
+If requirements.txt is unavailable, install Django:
+pip install django
 
-Database Setup (MySQL)
 
-Create a database in MySQL (e.g., ehospitality_db).
+Configure the Database:
 
-Update settings.py with your database credentials.
+By default, the project uses SQLite (no setup needed). To use PostgreSQL:
+Install PostgreSQL and create a database:psql -U postgres
+CREATE DATABASE e_hospital;
 
-DATABASES = {
+
+Update settings.py (in the project directory) with your database credentials:DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'ehospitality_db',
-        'USER': 'your_username',
-        'PASSWORD': 'your_password',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'e_hospital',
+        'USER': 'your_db_user',
+        'PASSWORD': 'your_db_password',
         'HOST': 'localhost',
-        'PORT': '3306',
+        'PORT': '5432',
     }
 }
 
 
-Run migrations
 
+
+
+
+Apply Migrations:Create and apply database migrations:
+python manage.py makemigrations
 python manage.py migrate
 
 
-Create a superuser
-
+Create a Superuser (for admin access):
 python manage.py createsuperuser
 
+Follow prompts to set a username, email, and password.
 
-Run the server
-
+Run the Development Server:Start the Django server:
 python manage.py runserver
 
+Open http://127.0.0.1:8000/ in a web browser to view the application.
 
-Now, visit http://127.0.0.1:8000/ in your browser.
+Access the Admin Panel:Visit http://127.0.0.1:8000/admin and log in with your superuser credentials.
 
-🔑 Login Credentials (Demo)
 
-Admin Panel: /admin
+Usage
 
-Use the superuser credentials you created during setup.
+Homepage: Access the main interface at http://127.0.0.1:8000/.
+Patient Features: Register or log in to book appointments or view medical history.
+Doctor Features: Log in to manage schedules and patient interactions.
+Admin Features: Use the admin panel to manage users, appointments, and hospital data.
 
-🤝 Contributing
+Troubleshooting
 
-Contributions are welcome! Feel free to fork this repo and submit a pull request.
+"No module named 'django'": Ensure the virtual environment is active and Django is installed (pip install django).
+Database errors: Verify database settings in settings.py and ensure PostgreSQL is running if used.
+Port conflicts: If runserver fails, try a different port:python manage.py runserver 8001
 
-📜 License
 
-This project is licensed under the MIT License – free to use, modify, and distribute.
+
+Contributing
+Contributions are welcome! To contribute:
+
+Fork the repository.
+Create a new branch (git checkout -b feature/your-feature).
+Make changes and commit (git commit -m "Add your feature").
+Push to your branch (git push origin feature/your-feature).
+Open a Pull Request.
+
+Please follow the Code of Conduct (to be added).
+License
+This project is licensed under the MIT License. See the LICENSE file for details.
+Contact
+For questions or feedback, contact the project maintainer:
+
+GitHub: heymishab
+Email: [Add your email or remove this line if not applicable]

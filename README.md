@@ -1,98 +1,91 @@
-Django E-Hospital
-Django E-Hospital is a web-based hospital management system built with Python and the Django framework. It aims to streamline hospital operations by providing tools for patient management, appointment scheduling, and administrative tasks. The system is designed to be user-friendly for patients, doctors, and administrators, with a focus on accessibility and scalability.
-Features
-•	Patient Management: Register and manage patient profiles, including personal details and medical history.
-•	Appointment Scheduling: Book, reschedule, or cancel appointments with doctors based on availability.
-•	Doctor Profiles: View and manage doctor information and schedules.
-•	Admin Dashboard: Centralized interface for managing users, appointments, and hospital resources.
-•	Search Functionality: Search for doctors or patients with dynamic filtering.
-•	Secure Authentication: User registration and login for patients, doctors, and admins with Django's built-in security.
-•	Responsive Design: Mobile-friendly interface using Bootstrap.
-Note: Features may evolve as the project develops.
-Tech Stack
-•	Backend: Python 3.8+, Django 5.0+
-•	Frontend: HTML, CSS, JavaScript, Bootstrap 5
-•	Database: SQLite (development), PostgreSQL (production recommended)
-•	Dependencies: Managed via requirements.txt (e.g., Django, psycopg2 for PostgreSQL)
-•	Tools: Git, Virtualenv
-Prerequisites
-Before setting up the project, ensure you have the following installed on your Windows machine:
-•	Python 3.8 or higher (Download)
-•	Git (Download)
-•	Pip (included with Python)
-•	Virtualenv (pip install virtualenv)
-•	Optional: PostgreSQL for production (Download)
-Verify installations:
-python --version
-git --version
-pip --version
-Setup Instructions (Windows)
-Follow these steps to clone and run the project locally on a Windows machine:
-1.	Clone the Repository:
-Open Command Prompt or Git Bash and run:
-2.	cd C:\Path\To\Your\Projects
-3.	git clone https://github.com/heymishab/E-Hospitality.git
-4.	cd E-Hospitality
-5.	Create and Activate a Virtual Environment:
-6.	python -m venv env
-7.	.\env\Scripts\activate
-You should see (env) in your terminal prompt.
-8.	Install Dependencies:
-Install required Python packages:
-9.	pip install -r requirements.txt
-If requirements.txt is unavailable, install Django:
-pip install django
-10.	Configure the Database:
-o	By default, the project uses SQLite (no setup needed). To use PostgreSQL:
-	Install PostgreSQL and create a database:
-	psql -U postgres
-	CREATE DATABASE e_hospital;
-	Update settings.py (in the project directory) with your database credentials:
-	DATABASES = {
-	    'default': {
-	        'ENGINE': 'django.db.backends.postgresql',
-	        'NAME': 'e_hospital',
-	        'USER': 'your_db_user',
-	        'PASSWORD': 'your_db_password',
-	        'HOST': 'localhost',
-	        'PORT': '5432',
-	    }
-	}
-11.	Apply Migrations:
-Create and apply database migrations:
-12.	python manage.py makemigrations
-13.	python manage.py migrate
-14.	Create a Superuser (for admin access):
-15.	python manage.py createsuperuser
-Follow prompts to set a username, email, and password.
-16.	Run the Development Server:
-Start the Django server:
-17.	python manage.py runserver
-Open http://127.0.0.1:8000/ in a web browser to view the application.
-18.	Access the Admin Panel:
-Visit http://127.0.0.1:8000/admin and log in with your superuser credentials.
-Usage
-•	Homepage: Access the main interface at http://127.0.0.1:8000/.
-•	Patient Features: Register or log in to book appointments or view medical history.
-•	Doctor Features: Log in to manage schedules and patient interactions.
-•	Admin Features: Use the admin panel to manage users, appointments, and hospital data.
-Troubleshooting
-•	"No module named 'django'": Ensure the virtual environment is active and Django is installed (pip install django).
-•	Database errors: Verify database settings in settings.py and ensure PostgreSQL is running if used.
-•	Port conflicts: If runserver fails, try a different port:
-•	python manage.py runserver 8001
-Contributing
-Contributions are welcome! To contribute:
-1.	Fork the repository.
-2.	Create a new branch (git checkout -b feature/your-feature).
-3.	Make changes and commit (git commit -m "Add your feature").
-4.	Push to your branch (git push origin feature/your-feature).
-5.	Open a Pull Request.
-Please follow the Code of Conduct (to be added).
-License
-This project is licensed under the MIT License. See the LICENSE file for details.
-Contact
-For questions or feedback, contact the project maintainer:
-•	GitHub: heymishab
-•	Email: [Add your email or remove this line if not applicable]
+<div align="center">
 
+# 🏥 E-Hospitality
+### Smart Hospital Management System
+
+[![Django](https://img.shields.io/badge/Framework-Django-092E20?style=for-the-badge&logo=django&logoColor=white)](https://www.djangoproject.com/)
+[![Database](https://img.shields.io/badge/Database-MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white)](https://www.mysql.com/)
+[![License](https://img.shields.io/badge/License-MIT-ff9800?style=for-the-badge)](LICENSE)
+[![Status](https://img.shields.io/badge/Status-In%20Progress-blue?style=for-the-badge)]()
+
+**A modern web-based solution to streamline hospital operations, appointments, and patient care.**
+
+[✨ Features](#-features) • 
+[🛠️ Tech Stack](#-tech-stack) • 
+[🚀 Getting Started](#-getting-started) • 
+[📷 Screenshots](#-screenshots) • 
+[📞 Contact](#-connect-with-me)
+
+</div>
+
+---
+
+## 🌟 About E-Hospitality
+
+E-Hospitality is a Django-based hospital management system built to simplify healthcare workflows.  
+From **patient registration** to **doctor management** and **secure payments**, it integrates essential hospital operations into one seamless digital platform.
+
+---
+
+## ✨ Features
+
+### 👩‍⚕️ Core Hospital Management
+- **Patient Management** – Add, update, and track patient records.
+- **Doctor Management** – Manage schedules, availability, and specialties.
+- **Appointment Booking** – Patients can book and manage appointments online.
+- **Billing System** – Automated billing with payment gateway integration.
+
+### 🔐 Security & Reliability
+- **Role-based Authentication** – Secure login for patients, doctors, and admins.
+- **Data Security** – Protected against SQL Injection, CSRF, and XSS attacks.
+- **Scalable Architecture** – Built with Django’s robust ORM and modular design.
+
+### 💳 Payment Integration
+- **Stripe Payments** – Patients can pay securely for consultations and treatments.
+
+---
+
+## 🛠️ Tech Stack
+
+<div align="center">
+
+### Backend
+![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![Django](https://img.shields.io/badge/Django-092E20?style=for-the-badge&logo=django&logoColor=white)
+
+### Frontend
+![HTML](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
+![CSS](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
+![Bootstrap](https://img.shields.io/badge/Bootstrap-7952B3?style=for-the-badge&logo=bootstrap&logoColor=white)
+
+### Database
+![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white)
+
+### Payment
+![Stripe](https://img.shields.io/badge/Stripe-635BFF?style=for-the-badge&logo=stripe&logoColor=white)
+
+</div>
+
+---
+
+## 🚀 Getting Started
+
+```bash
+# Clone the repository
+git clone https://github.com/heymishab/E-Hospitality.git
+cd E-Hospitality
+
+# Create virtual environment
+python -m venv venv
+source venv/bin/activate   # Linux/Mac
+venv\Scripts\activate      # Windows
+
+# Install dependencies
+pip install -r requirements.txt
+
+# Run migrations
+python manage.py makemigrations
+python manage.py migrate
+
+# Start development server
+python manage.py runserver
